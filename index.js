@@ -9,6 +9,7 @@ const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Prom
 
 const port = process.env.PORT || 3000
 
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')// com isso estamos indicando que usaremos o ejs como linguagem de template
 app.use(express.static('public'))//Diretorio alternativo para o express localizar arquivos que não estão no "get /"
 app.use(bodyParser.urlencoded({ extended: true }))
